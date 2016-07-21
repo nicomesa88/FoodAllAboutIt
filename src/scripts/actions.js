@@ -1,7 +1,7 @@
 
 //STEP 6 (CREATE ACTIONS MODULE)
 
-import {User} from './models/models'
+import {User, DishModel} from './models/models'
 
 const ACTIONS = {
 
@@ -35,7 +35,24 @@ const ACTIONS = {
         User.logout().then(
             () => location.hash = 'login'
         )
+    },
+
+    saveDish: function(dishObj){
+        var dish = new DishModel(dishObj)
+        dish.save().then(
+            (responseData) => {
+                alert('Thanks for submitting!!!')
+                location.hash='home'
+                console.log(responseData)
+            },
+            (error) => {
+                alert('FAILURE')
+                console.log(error)
+            }
+        )
     }
 }
+
+
 
 export default ACTIONS

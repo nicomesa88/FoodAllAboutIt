@@ -2,6 +2,18 @@ import Backbone from 'backbone'
 import $ from 'jquery'
 import {app_name} from '../app'
 
+
+const DishModel = Backbone.Model.extend({
+	urlRoot: '/api/dishes',
+	idAttribute:'_id'
+})
+
+const DishCollection = Backbone.Collection.extend({
+	model: DishModel,
+	url: '/api/dishes'
+})
+
+
 // ..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x
 const UserAuthModel = Backbone.Model.extend({
 	urlRoot: '/api/users',
@@ -52,4 +64,4 @@ const User = UserAuthModel.extend({
 	}
 })
 
-export { User }
+export { User, DishModel }
