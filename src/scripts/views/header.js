@@ -16,11 +16,11 @@ const NavBar = React.createClass({
 	render: function() {
 		return (
 			<div id="navBar">
-				<a href="#login">log in</a>
-				<a href="#home">home</a>
+				<a href="#login">Log In</a>
+				<a href="#home">Home</a>
 				<a href="#dish/myDishes">My Dishes</a>
 				<a href="#dish/postDishes">Post Dish</a>
-				<a href="#" onClick={ACTIONS.logUserOut} >log out</a>
+				<a href="#" onClick={ACTIONS.logUserOut} >Log Out</a>
 			</div>
 			)
 	}
