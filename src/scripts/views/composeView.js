@@ -26,7 +26,8 @@ const DishPostingForm = React.createClass({
 			rating: e.currentTarget.rating.value,
 			authorId: User.getCurrentUser()._id,
 			authorEmail: User.getCurrentUser().email,
-			imageUrl: this.url ? this.url: '../assets/images/empty-plate.jpg'
+			imageUrl: this.url ? this.url: '/images/empty-plate.jpg',
+			tags: e.currentTarget.tags.value.split(', ')
 		})
 	},
 
@@ -45,6 +46,7 @@ const DishPostingForm = React.createClass({
 					<textarea type="text" name="description" placeholder="Enter the description"></textarea>
 					<input type="text" name="location" placeholder="Where is this place located"/>
 					<input type="text" name="rating" placeholder="Rating"/>
+					<input type="text" name="tags" placeholder="Input Tags, seperate tags with a comma" />
 					<ReactFilepicker apikey='A0hkVciLxQAuC7SR2RhKDz' onSuccess={this._handleImage}/>
 					<button type="submit">SUBMIT</button>
 				</form>

@@ -83,5 +83,16 @@ apiRouter.get('/user/dishes', function(request, response) {
     })
 })
 
+apiRouter.put('/dishes/:_id', function(request, response){
+    Dish.findByIdAndUpdate(request.params._id, request.body , function(error, records) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(records)
+        }
+    })
+})
+
 
 module.exports = apiRouter
