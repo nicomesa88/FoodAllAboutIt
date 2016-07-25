@@ -94,5 +94,16 @@ apiRouter.put('/dishes/:_id', function(request, response){
     })
 })
 
+apiRouter.delete('/dishes/:_id', function(request,response){
+    Dish.findByIdAndRemove(request.params._id, function(error, records) {
+        if(error) {
+            response.status(500).send(error)
+        }
+        else {
+            response.json(records)
+        }
+    })
+})
+
 
 module.exports = apiRouter

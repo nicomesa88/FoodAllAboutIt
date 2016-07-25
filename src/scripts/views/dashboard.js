@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './header'
 import DISH_STORE from '../store'
 import ACTIONS from '../actions'
-import{User} from '../models/models'
+import {User} from '../models/models'
 
 
 
@@ -65,7 +65,7 @@ const Dish = React.createClass({
 				<p>{this.props.dishModel.get('title')}</p>
 				<p>{this.props.dishModel.get('description')}</p>
 				<p>{this.props.dishModel.get('tags')}</p>
-				{/*<img src={this.props.dishModel.get('imageUrl')}/>*/}
+				<img src={this.props.dishModel.get('imageUrl')}/>
 				<button onClick = {this._handleLikes} >LIKE</button>
 				<p>likes: {this.props.dishModel.get('likes').length}</p>
 			</div>

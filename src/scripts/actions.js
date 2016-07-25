@@ -6,9 +6,9 @@ import DISH_STORE from './store'
 
 const ACTIONS = {
 
-		deletePost: function(modelId) {
-		let deleteDish = DISH_STORE.data.collection.get(modelId)
-		deleteDish.destroy()
+	deletePost: function(postId) {
+		let post = DISH_STORE.data.collection.get(postId)
+		post.destroy()
 	},
 
 	fetchDishes: function(tags) {
